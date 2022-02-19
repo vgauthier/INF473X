@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:  
-  build_osx:
+  build_osx_clang:
     macos:
       xcode: 12.5.1 # indicate your selected version of Xcode
     steps:
@@ -26,6 +26,6 @@ workflows:
 
   INF473X_workflow:
     jobs:
-      - build_osx
+      - build_osx_clang
       - build_linux_clang
       - build_linux_gcc
