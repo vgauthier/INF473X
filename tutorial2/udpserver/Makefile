@@ -5,7 +5,7 @@
 
 RM=rm -f 
 CFLAGS=-g -Wall
-CC=/usr/bin/clang
+CC=clang
 LIBS=-lpthread
 SRC=server.c utils.c
 OBJS=$(SRC:.c=.o)
