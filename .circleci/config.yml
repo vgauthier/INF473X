@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - run: make clang
-  build2:
+  build1:
     docker:
       - image: cimg/base:2021.04
     steps:
