@@ -18,6 +18,7 @@
 #include <netinet/in.h>
 #include <pthread.h>
 #include <sys/queue.h>
+#include <signal.h>
 
 #include "server.h"
 #include "utils.h"
