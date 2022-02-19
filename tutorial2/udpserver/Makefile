@@ -9,15 +9,22 @@ CC=gcc
 LIBS=-lpthread
 SRC=server.c utils.c
 OBJS=$(SRC:.c=.o)
+BIN=bin/
+MD=mkdir
 
-all: server
+all: directories server 
+
+.PHONY: directories
+directories:
+	$(MD) -p $(BIN)
 
 server: $(OBJS)
-	$(CC) -Wall -o $@ $(OBJS) $(LIBS)
+	$(CC) -Wall -o $(BIN)$@ $(OBJS) $(LIBS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -o $@ -c $<
 
 .PHONY: clean
 clean:
-	$(RM) *.o server
+	$(RM) *.o $(BIN)server 
+	$(RM) -r $(BIN)

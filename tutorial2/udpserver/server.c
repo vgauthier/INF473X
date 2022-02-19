@@ -124,7 +124,7 @@ request * create_request(){
  * @param af_inet 
  * @param ip 
  * @param port 
- * @return struct sockaddr_in
+ * @return struct sockaddr_in ptr
  */
 SA_IN * create_in_addr(short af_inet, unsigned long ip, int port){
     SA_IN *inaddr = (SA_IN *)malloc(sizeof(SA_IN));
@@ -155,7 +155,7 @@ void * thread_function(void *arg){
         
         // handle the reply to the input UDP packet
         if(req != NULL){
-            handle_connection((void *)req);
+            handle_connection(req);
             req = NULL;
         }
     }
