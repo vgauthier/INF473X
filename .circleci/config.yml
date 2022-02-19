@@ -20,4 +20,4 @@ workflows:
   INF473X_workflow:
     jobs:
       - build_osx
-      - build_linux
+      - build_linux_gcc
