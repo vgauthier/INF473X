@@ -1,8 +1,11 @@
 MAKE=make
 SUBDIRS=tutorial2/udpserver
 
-all: $(SUBDIRS)
-	$(MAKE) -C $<
+clang: $(SUBDIRS)
+	$(MAKE) CC=clang -C $<
+
+gcc: $(SUBDIRS)
+	$(MAKE) CC=gcc -C $< 
 
 .PHONY: clean
 clean: $(SUBDIRS)
