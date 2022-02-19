@@ -1,15 +1,23 @@
 version: 2.1
 
 jobs:  
-  build_osx:
+  build:
     macos:
       xcode: 12.5.1 # indicate your selected version of Xcode
     steps:
       - checkout
       - run: make clang
-  build_linux:
+  build2:
     docker:
       - image: cimg/base:2021.04
     steps:
       - checkout
       - run: make gcc
+
+workflows:
+  version: 2
+
+  my_workflow:
+    jobs:
+      - build
+      - build1
