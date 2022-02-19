@@ -7,12 +7,18 @@ jobs:
     steps:
       - checkout
       - run: make clang
+  build_linux_clang:
+    docker:
+      - image: cimg/base:2021.04
+    steps:
+      - checkout
+      - run: sudo apt-get update; sudo apt-get install llvm clang
+      - run: make clang
   build_linux_gcc:
     docker:
       - image: cimg/base:2021.04
     steps:
       - checkout
-      - run: sudo apt-get update; sudo apt-get install llvm-3.4 libclang1-3.4 llvm-3.4-dev
       - run: make gcc
 
 workflows:
@@ -21,4 +27,5 @@ workflows:
   INF473X_workflow:
     jobs:
       - build_osx
+      - build_linux_clang
       - build_linux_gcc
