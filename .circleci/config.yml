@@ -12,6 +12,7 @@ jobs:
       - image: cimg/base:2021.04
     steps:
       - checkout
+      - run: sudo apt-get update; sudo apt-get install llvm-3.4 libclang1-3.4 llvm-3.4-dev
       - run: make gcc
 
 workflows:
