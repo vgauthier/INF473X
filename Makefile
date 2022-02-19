@@ -1,5 +1,5 @@
 MAKE=make
-SUBDIRS=tutorial2/udpserver
+SUBDIRS=tutorial3/udpserver
 
 clang: $(SUBDIRS)
 	$(MAKE) CC=clang -C $<
